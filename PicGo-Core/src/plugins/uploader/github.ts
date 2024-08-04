@@ -8,7 +8,7 @@ const postOptions = (fileName: string, options: IGithubConfig, data: any): IOldR
   const { token, repo } = options
   return {
     method: 'PUT',
-    url: `https://api.github.com/repos/${repo}/contents/${encodeURI(path)}${encodeURIComponent(fileName)}`,
+    url: `https://alm-github.systems.uk.hsbc/api/v3/repos/${repo}/contents/${encodeURI(path)}${encodeURIComponent(fileName)}`,
     headers: {
       Authorization: `token ${token}`,
       'User-Agent': 'PicGo',
@@ -61,7 +61,7 @@ const handle = async (ctx: IPicGo): Promise<IPicGo> => {
             if (githubOptions.customUrl) {
               img.imgUrl = `${githubOptions.customUrl}/${encodeURI(githubOptions.path)}${encodeURIComponent(img.fileName)}`
             } else {
-              img.imgUrl = `https://raw.githubusercontent.com/${githubOptions.repo}/${githubOptions.branch}/${encodeURI(githubOptions.path)}${encodeURIComponent(img.fileName)}`
+              img.imgUrl = `https://alm-github.systems.uk.hsbc/raw/${githubOptions.repo}/${githubOptions.branch}/${encodeURI(githubOptions.path)}${encodeURIComponent(img.fileName)}`
             }
           } else {
             throw e
