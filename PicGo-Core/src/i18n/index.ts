@@ -12,9 +12,9 @@ import { EN } from './en'
 import { ZH_TW } from './zh-TW'
 
 const languageList: IStringKeyMap<IStringKeyMap<string>> = {
+  en: EN,
   'zh-CN': ZH_CN,
-  'zh-TW': ZH_TW,
-  en: EN
+  'zh-TW': ZH_TW
 }
 
 class I18nManager implements II18nManager {
