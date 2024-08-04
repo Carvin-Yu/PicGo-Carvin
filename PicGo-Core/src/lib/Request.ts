@@ -9,6 +9,7 @@ import FormData from 'form-data'
 import https from 'https'
 import tunnel from 'tunnel'
 const httpsAgent = new https.Agent({
+  rejectUnauthorized: false, // 忽略SSL验证
   maxVersion: 'TLSv1.2',
   minVersion: 'TLSv1.2'
 })

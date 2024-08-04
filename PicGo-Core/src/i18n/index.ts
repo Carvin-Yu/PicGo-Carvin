@@ -24,9 +24,9 @@ class I18nManager implements II18nManager {
   constructor (ctx: IPicGo) {
     this.ctx = ctx
     this.objectAdapter = new ObjectAdapter(languageList)
-    let language = this.ctx.getConfig<string>('settings.language') || 'zh-CN'
+    let language = this.ctx.getConfig<string>('settings.language') || 'en'
     if (!languageList[language]) {
-      language = 'zh-CN' // use default
+      language = 'en' // use default
     }
     this.i18n = new I18n({
       adapter: this.objectAdapter,
